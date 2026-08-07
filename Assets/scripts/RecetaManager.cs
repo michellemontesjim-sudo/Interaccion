@@ -21,10 +21,13 @@ public struct Receta
     [TextArea(2, 4)]
     public string descriptionMessage;      // Texto ej: "¡Parece que dentro había la mitad de una llave!"
     public GameObject extraRewardPrefab;    // Prefab del objeto que irá al inventario (ej: MitadLlave)
+
+
 }
 public class RecetaManager : MonoBehaviour
 {
     public static RecetaManager Instance;
+
 
     [Header("UI de Texto / Diálogo")]
     public TextMeshProUGUI dialogText;
@@ -43,15 +46,7 @@ public class RecetaManager : MonoBehaviour
     public GameObject canvasDialogo;
     private void Awake()
     {
-        //if (Instance == null) Instance = this;
-        //else Destroy(gameObject);
-
-        // Asegurarnos de que el panel comience APAGADO al iniciar el juego
-        //if (dialogPanel != null)
-        //{
-        //dialogPanel.SetActive(false);
-        //}
-
+        
         // Patrón Singleton con Persistencia entre Escenas
         if (Instance == null)
         {
@@ -142,15 +137,25 @@ public class RecetaManager : MonoBehaviour
                 // Aplicamos la actualización de ID y Sprite al objeto que NO se vaya a destruir
                 if (!string.IsNullOrEmpty(recipe.resultId))
                 {
+                    objetoInteractuable objetoResultado = null;
+
                     if (!recipe.destroyItemA)
                     {
                         objectA.UpdateItem(recipe.resultId, recipe.resultSprite);
                         DontDestroyOnLoad(objectA.gameObject);
+                        objetoResultado = objectA;
                     }
                     else if (!recipe.destroyItemB)
                     {
                         objectB.UpdateItem(recipe.resultId, recipe.resultSprite);
                         DontDestroyOnLoad(objectB.gameObject);
+                        objetoResultado = objectB;
+                    }
+
+                    // Si el objeto resultante en la mesa/inventario pasa a ser el ítem clave:
+                    if (objetoResultado != null && barraInventario.Instance != null)
+                    {
+                        barraInventario.Instance.VerificarYDesbloquearBoton(objetoResultado);
                     }
                 }
 
@@ -180,8 +185,7 @@ public class RecetaManager : MonoBehaviour
             }
         }
 
-        // Si la combinación no fue válida, regresa el objeto soltado a su posición original
-        item1.transform.position = item1.transform.position;
+        
     }
 
     // Instancia el objeto y lo coloca en el inventario automáticamente

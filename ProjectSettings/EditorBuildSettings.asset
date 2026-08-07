@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/cocina.unity
     guid: f19e5bb2e982f4a4597c53befe277428
+  - enabled: 1
+    path: Assets/Scenes/acertijo.unity
+    guid: cc79a897e98ef314db87c91e903ad2f7
+  - enabled: 1
+    path: Assets/Scenes/EscenaFinal.unity
+    guid: dfe255f406a05974ba47a1e5f1188737
   m_configObjects: {}

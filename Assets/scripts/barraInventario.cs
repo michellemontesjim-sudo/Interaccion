@@ -6,6 +6,10 @@ public class barraInventario : MonoBehaviour
 {
     public static barraInventario Instance;
 
+    [Header("Desbloqueo por Ítem Clave")]
+    [Tooltip("ID del objeto que activará el botón de cambio de escena")]
+    public string itemIdClaveAcertijo = "llave_acertijo";
+
     [Header("Puntos donde se colocarán los objetos")]
     public Transform[] inventarioSlots; // Posiciones fijas en la barra
     private objetoInteractuable[] itemsEnSlots;
@@ -36,6 +40,9 @@ public class barraInventario : MonoBehaviour
             if (itemsEnSlots[i] == null || itemsEnSlots[i] == item)
             {
                 itemsEnSlots[i] = item;
+
+                // --- COMPROBACIÓN DE ÍTEM CLAVE ---
+                VerificarYDesbloquearBoton(item);
                 return inventarioSlots[i].position;
             }
         }
@@ -55,5 +62,35 @@ public class barraInventario : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public void VerificarYDesbloquearBoton(objetoInteractuable item)
+    {
+        // Cambiamos la condición para que directamente le pida al botón verificar su ítem clave
+        // Incluimos 'true' en FindObjectsOfType para que busque el botón AUNQUE ESTÉ OCULTO / INACTIVO
+        BotonCambiarEscena[] botones = FindObjectsOfType<BotonCambiarEscena>(true);
+
+        foreach (BotonCambiarEscena boton in botones)
+        {
+            if (boton != null && item != null && item.itemId == boton.itemIdClave)
+            {
+                boton.MostrarBoton();
+            }
+        }
+    }
+
+    public bool TieneItem(string idBuscado)
+    {
+        if (itemsEnSlots == null) return false;
+
+        for (int i = 0; i < itemsEnSlots.Length; i++)
+        {
+            if (itemsEnSlots[i] != null && itemsEnSlots[i].itemId == idBuscado)
+            {
+                return true; // Encontró el ítem en la barra
+            }
+        }
+
+        return false; // El ítem no está en el inventario
     }
 }
