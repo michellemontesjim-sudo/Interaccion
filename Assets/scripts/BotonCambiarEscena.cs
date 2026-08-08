@@ -19,7 +19,7 @@ public class BotonCambiarEscena : MonoBehaviour
 
     private void Start()
     {
-        // 1. Verificar si ya fue guardado en la persistencia de escena
+        // mirar si ya fue guardado en la persistencia de escena
         if (!string.IsNullOrEmpty(uniqueIDDesbloqueo) && SceneStateManager.Instance != null)
         {
             if (SceneStateManager.Instance.EstaRecogido(uniqueIDDesbloqueo))
@@ -29,18 +29,18 @@ public class BotonCambiarEscena : MonoBehaviour
             }
         }
 
-        // 2. Verificar si el jugador ya tiene el corazonColgante en el inventario al cargar la escena
+        // mirar si ya tiene el corazonColgante en el inventario al cargar escena
         if (barraInventario.Instance != null && barraInventario.Instance.TieneItem(itemIdClave))
         {
             MostrarBoton();
             return;
         }
 
-        // 3. De lo contrario, iniciar oculto
+        // sino que este oculto
         gameObject.SetActive(false);
     }
 
-    // Comprueba slot por slot si el objeto está guardado en el inventario
+    // mira slots del inventario a ver si el objeto esta
     public bool TieneElObjetoEnInventario()
     {
         if (barraInventario.Instance != null)
@@ -50,7 +50,7 @@ public class BotonCambiarEscena : MonoBehaviour
         return false;
     }
 
-    // Llama a este método para hacer visible el botón en pantalla
+    // metodo para hacer visible el boton
     public void MostrarBoton()
     {
         gameObject.SetActive(true);
@@ -62,7 +62,7 @@ public class BotonCambiarEscena : MonoBehaviour
         }
     }
 
-    // Asignado al evento OnClick() del Canvas
+    // para poner el evento click al boton
     public void IrAEscenaAcertijo()
     {
         if (!string.IsNullOrEmpty(nombreEscenaAcertijo))

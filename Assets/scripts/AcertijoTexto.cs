@@ -13,24 +13,24 @@ public class AcertijoTexto : MonoBehaviour
     private AudioSource audioSource;
 
     [Header("Identificador para Persistencia")]
-    [Tooltip("ID único para recordar si este acertijo ya fue resuelto (Ej: Acertijo_CajaFuerte_01)")]
+    [Tooltip("ID único para recordar si este acertijo ya fue resuelto")]
     public string uniqueID;
 
     [Header("Configuración del Acertijo")]
     [TextArea(2, 4)]
     public string enunciadoAcertijo = "Sun digs its heel to taunt you, but after sunlit days, one thing stays the same...";
 
-    [Tooltip("La respuesta correcta (No importa si se escribe en mayúsculas o minúsculas)")]
+    [Tooltip("La respuesta correcta")]
     public string respuestaCorrecta = "rises the moon";
 
     [Header("Referencias de la Interfaz UI")]
-    public GameObject panelAcertijoUI;       // El Panel pop-up en el Canvas
-    public TextMeshProUGUI textoEnunciado;   // Texto que muestra la pregunta
-    public TMP_InputField inputRespuesta;    // El campo donde el usuario escribe
-    public TextMeshProUGUI textoFeedback;     // Muestra "¡Correcto!" o "Incorrecto"
+    public GameObject panelAcertijoUI;       
+    public TextMeshProUGUI textoEnunciado;
+    public TMP_InputField inputRespuesta;
+    public TextMeshProUGUI textoFeedback;
 
-    [Header("Recompensa / Resultado al Resolver")]
-    public GameObject prefabRecompensa;      // (Opcional) Objeto que va al inventario
+    [Header("Recompensar")]
+    public GameObject prefabRecompensa;      
     [TextArea(2, 4)]
     public string mensajeExito = "¡La caja fuerte se ha abierto!";
 
@@ -38,7 +38,7 @@ public class AcertijoTexto : MonoBehaviour
     [Tooltip("Marcar si al resolver este acertijo se debe pasar automáticamente a la escena final.")]
     public bool irAEscenaFinal = true;
 
-    [Tooltip("Nombre EXACTO de la escena final en los Build Settings.")]
+    [Tooltip("Nombre de la escena final en los Build Settings.")]
     public string nombreEscenaFinal = "EscenaFinal";
 
     [Tooltip("Segundos de espera mostrando el mensaje/recompensa antes de cambiar de escena.")]
@@ -146,19 +146,19 @@ public class AcertijoTexto : MonoBehaviour
 
             CerrarPanelAcertijo();
 
-            // 1. Muestra el mensaje de éxito en pantalla
+            // muestra mensaje de exito en pantalla
             if (RecetaManager.Instance != null && !string.IsNullOrEmpty(mensajeExito))
             {
                 RecetaManager.Instance.ShowDialog(mensajeExito);
             }
 
-            // 2. Entrega el objeto al inventario
+            // entrega el objeto al inventario
             if (prefabRecompensa != null)
             {
                 EntregarRecompensa();
             }
 
-            // 3. Inicia la corrutina que da tiempo a leer antes de cambiar de escena
+            // inicia conteo que da tiempo a leer antes de cambiar de escena
             if (irAEscenaFinal && !string.IsNullOrEmpty(nombreEscenaFinal))
             {
                 StartCoroutine(CargarEscenaFinalConDelay());
@@ -190,10 +190,10 @@ public class AcertijoTexto : MonoBehaviour
 
     private IEnumerator CargarEscenaFinalConDelay()
     {
-        // Espera los segundos configurados para que el jugador lea el mensaje y vea la recompensa
+        // espera los segundos puestos para que lea el mensaje y vea la recompensa
         yield return new WaitForSeconds(tiempoEsperaTransicion);
 
-        // Carga la escena final directamente (se limpiará la UI automáticamente)
+        // carga escena final directamente
         SceneManager.LoadScene(nombreEscenaFinal);
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class ObjetoInspeccionable : MonoBehaviour
 {
     [Header("Identificador Único")]
-    [Tooltip("ID único para este contenedor/grieta (Ej: Grieta_Habitacion_01)")]
+    [Tooltip("ID único para este contenedor/grieta)")]
     public string uniqueID;
 
     [Header("Mensaje de Diálogo")]
@@ -15,7 +15,7 @@ public class ObjetoInspeccionable : MonoBehaviour
     public string mensajeInspeccion = "No parece haber nada interesante aquí...";
 
     [Header("Recompensa (Opcional)")]
-    public GameObject prefabRecompensa; // Objeto que irá al inventario (ej: Llave)
+    public GameObject prefabRecompensa; // objeto que irá al inventario
     public bool darRecompensaUnaSolaVez = true;
 
     [Header("Mensaje tras recoger la recompensa")]
@@ -26,7 +26,7 @@ public class ObjetoInspeccionable : MonoBehaviour
 
     private void Start()
     {
-        // Al cargar o regresar a la escena, consultamos si este objeto ya entregó su recompensa
+        // al cargar o regresar a la escena consulta si este objeto ya dio recompensa
         if (!string.IsNullOrEmpty(uniqueID) && SceneStateManager.Instance != null)
         {
             if (SceneStateManager.Instance.EstaRecogido(uniqueID))
@@ -40,7 +40,7 @@ public class ObjetoInspeccionable : MonoBehaviour
     {
         if (RecetaManager.Instance == null) return;
 
-        // Caso 1: Ya entregó la recompensa anteriormente
+        // ya entrego la recompensa anteriormente
         if (yaFueRecompensado)
         {
             if (!string.IsNullOrEmpty(mensajeYaInspeccionado))
@@ -50,13 +50,13 @@ public class ObjetoInspeccionable : MonoBehaviour
             return;
         }
 
-        // Mostrar el texto principal de la inspección
+        // mostrar texto principal de inspeccion
         if (!string.IsNullOrEmpty(mensajeInspeccion))
         {
             RecetaManager.Instance.ShowDialog(mensajeInspeccion);
         }
 
-        // Caso 2: Tiene una recompensa para entregar
+        // si tiene una recompensa para entregar
         if (prefabRecompensa != null)
         {
             EntregarRecompensa();
@@ -65,7 +65,7 @@ public class ObjetoInspeccionable : MonoBehaviour
             {
                 yaFueRecompensado = true;
 
-                // Registrar en el SceneStateManager que esta grieta ya entregó la recompensa
+                // poner en el SceneStateManager que esta grieta ya dio recompensa
                 if (!string.IsNullOrEmpty(uniqueID) && SceneStateManager.Instance != null)
                 {
                     SceneStateManager.Instance.RegistrarObjetoRecogido(uniqueID);

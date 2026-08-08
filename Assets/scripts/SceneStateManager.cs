@@ -6,7 +6,7 @@ public class SceneStateManager : MonoBehaviour
 {
     public static SceneStateManager Instance;
 
-    // Lista de IDs de objetos que han sido recogidos/destruidos
+    // lista de ids de objetos recogidos/destruidos
     private HashSet<string> objetosRecogidos = new HashSet<string>();
 
     private void Awake()
@@ -22,7 +22,7 @@ public class SceneStateManager : MonoBehaviour
         }
     }
 
-    // Registrar que un objeto fue tomado o destruido
+    // poner que un objeto fue tomado o destruido
     public void RegistrarObjetoRecogido(string objectID)
     {
         if (!string.IsNullOrEmpty(objectID) && !objetosRecogidos.Contains(objectID))
@@ -31,7 +31,7 @@ public class SceneStateManager : MonoBehaviour
         }
     }
 
-    // Consultar si un objeto ya fue tomado previamente
+    // mirar si un objeto ya fue tomado antes
     public bool EstaRecogido(string objectID)
     {
         return objetosRecogidos.Contains(objectID);

@@ -11,7 +11,7 @@ public class ControladorEscenaFinal : MonoBehaviour
 
     [Header("Configuración del Mensaje")]
     [TextArea(4, 8)]
-    public string mensajeReflexion = "Aquí escribes el mensaje de reflexión final sobre tu juego...";
+    public string mensajeReflexion = "mensaje de reflexión final sobre tu juego...";
 
     [Header("Efecto de Escritura")]
     [Tooltip("Si está marcado, el texto aparecerá letra por letra.")]
@@ -19,7 +19,7 @@ public class ControladorEscenaFinal : MonoBehaviour
     public float velocidadEscritura = 0.04f;
 
     [Header("Opciones Finales (Opcional)")]
-    public GameObject botonReiniciar; // Por si quieres permitir volver a jugar
+    public GameObject botonReiniciar;
 
     private void Start()
     {
@@ -49,17 +49,17 @@ public class ControladorEscenaFinal : MonoBehaviour
             yield return new WaitForSeconds(velocidadEscritura);
         }
 
-        // Una vez terminado el texto, mostramos el botón para reiniciar si existe
+        // por si se pone algo para volver
         if (botonReiniciar != null)
         {
             botonReiniciar.SetActive(true);
         }
     }
 
-    // Asignar al botón 'Volver a Jugar' o 'Menú Principal' en el Canvas UI
+   
     public void ReiniciarJuego()
     {
-        // Si usas un Gestor de Estado o PersistentObjects, considera reiniciarlos aquí
-        SceneManager.LoadScene(0); // Carga la escena inicial (Build Index 0)
+        
+        SceneManager.LoadScene(0);
     }
 }

@@ -10,17 +10,17 @@ public struct Receta
 {
     public string itemA;
     public string itemB;
-    public string resultId;     // El nuevo ID del objeto (Ej: "VelaEncendida")
-    public Sprite resultSprite; // La nueva imagen para la escena
+    public string resultId;     
+    public Sprite resultSprite; 
 
     [Header("Opciones de Consumo")]
-    public bool destroyItemA; // ¿El objeto arrastrado desaparece? (Por defecto: true)
-    public bool destroyItemB; // ¿El objeto receptor desaparece? (Ejemplo: la caja/mesa -> false)
+    public bool destroyItemA; // ¿El objeto arrastrado desaparece? 
+    public bool destroyItemB; // ¿El objeto receptor desaparece? 
 
     [Header("Recompensa / Mensaje Opcional")]
     [TextArea(2, 4)]
-    public string descriptionMessage;      // Texto ej: "¡Parece que dentro había la mitad de una llave!"
-    public GameObject extraRewardPrefab;    // Prefab del objeto que irá al inventario (ej: MitadLlave)
+    public string descriptionMessage;      // Texto descripción diálogo encontrar objeto
+    public GameObject extraRewardPrefab;    // Prefab del objeto que irá al inventario
 
 
 }
@@ -34,7 +34,7 @@ public class RecetaManager : MonoBehaviour
     public GameObject dialogPanel;
 
     [Header("Configuración de Diálogo")]
-    public bool autoHide = false;        // Marcar si quieres que se cierre solo
+    public bool autoHide = false;        // Marcar para que se cierre solo
     public float displayDuration = 3.5f; // Segundos que dura en pantalla si autoHide es true
     private Coroutine hideCoroutine;
 
@@ -55,7 +55,7 @@ public class RecetaManager : MonoBehaviour
             // No destruye este gestor
             DontDestroyOnLoad(gameObject);
 
-            // ¡ESTA ES LA CLAVE! Tampoco destruye el Canvas que le asignaste
+            // Tampoco destruye el Canvas
             if (canvasDialogo != null)
             {
                 DontDestroyOnLoad(canvasDialogo);
@@ -68,13 +68,13 @@ public class RecetaManager : MonoBehaviour
         }
         else
         {
-            // Si regresamos a una escena anterior y ya existen, destruimos los duplicados
+            // Si regresa a una escena anterior y ya existen, destruye los duplicados
             if (canvasDialogo != null) Destroy(canvasDialogo);
             Destroy(gameObject);
         }
     }
 
-    // Muestra el mensaje en pantalla (VERSIÓN ÚNICA Y COMPLETA)
+    // Muestra mensaje en pantalla
     public void ShowDialog(string message)
     {
         if (dialogPanel == null || dialogText == null) return;
@@ -88,14 +88,14 @@ public class RecetaManager : MonoBehaviour
         dialogText.text = message;
         dialogPanel.SetActive(true);
 
-        // Si está configurado para ocultarse solo, iniciamos el conteo
+        // Para ocultarse solo que inicie el conteo
         if (autoHide)
         {
             hideCoroutine = StartCoroutine(HideDialogAfterDelay(displayDuration));
         }
     }
 
-    // Función para Ocultar el Diálogo (Llamada manualmente o por botón)
+    // Función para Ocultar el Diálogo
     public void CloseDialog()
     {
         if (dialogPanel != null)
@@ -104,7 +104,7 @@ public class RecetaManager : MonoBehaviour
         }
     }
 
-    // Corrutina que espera X segundos para cerrar el panel
+    // espera X segundos para cerrar el panel
     private IEnumerator HideDialogAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -120,21 +120,21 @@ public class RecetaManager : MonoBehaviour
 
             if (isDirectMatch || isReverseMatch)
             {
-                // Mapeamos los objetos para saber SIEMPRE cuál es el Ítem A y cuál el Ítem B de la receta,
+                // para saber cual es el Ítem A y cual el Ítem B de la receta
                 // sin importar cuál arrastró el jugador sobre cuál.
                 objetoInteractuable objectA = isDirectMatch ? item1 : item2;
                 objetoInteractuable objectB = isDirectMatch ? item2 : item1;
 
-                // 1. PERSISTENCIA
-                // Guardamos que ambos objetos originales ya fueron procesados en la historia
+                // 1. persistence
+                // guarda que ambos objetos originales ya fueron procesados
                 PersistentObject pA = objectA.GetComponent<PersistentObject>();
                 if (pA != null) pA.MarcarComoRecogido();
 
                 PersistentObject pB = objectB.GetComponent<PersistentObject>();
                 if (pB != null) pB.MarcarComoRecogido();
 
-                // 2. TRANSFORMACIÓN
-                // Aplicamos la actualización de ID y Sprite al objeto que NO se vaya a destruir
+                // 2. transforma
+                // actualización de ID y Sprite al objeto que no se vaya a destruir
                 if (!string.IsNullOrEmpty(recipe.resultId))
                 {
                     objetoInteractuable objetoResultado = null;
@@ -152,14 +152,14 @@ public class RecetaManager : MonoBehaviour
                         objetoResultado = objectB;
                     }
 
-                    // Si el objeto resultante en la mesa/inventario pasa a ser el ítem clave:
+                    // si el resultado es el objeto para la nueva sala
                     if (objetoResultado != null && barraInventario.Instance != null)
                     {
                         barraInventario.Instance.VerificarYDesbloquearBoton(objetoResultado);
                     }
                 }
 
-                // 3. DIÁLOGOS Y RECOMPENSAS
+                // 3. dialogos y recompensas
                 if (!string.IsNullOrEmpty(recipe.descriptionMessage))
                 {
                     ShowDialog(recipe.descriptionMessage);
@@ -170,7 +170,7 @@ public class RecetaManager : MonoBehaviour
                     GiveRewardToInventory(recipe.extraRewardPrefab);
                 }
 
-                // 4. DESTRUCCIÓN SEGÚN LA RECETA
+                // 4. destruccion segun la receta
                 if (recipe.destroyItemA && objectA != null)
                 {
                     Destroy(objectA.gameObject);

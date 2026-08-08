@@ -37,7 +37,7 @@ public class objetoInteractuable : MonoBehaviour
             spriteRenderer.sprite = newSprite;
             AdjustColliderSize();
 
-            // Nos aseguramos de que el collider quede activo tras cambiar el sprite
+            // asegura de que el collider quede activo tras cambiar el sprite
             if (boxCollider != null) boxCollider.enabled = true;
         }
     }
@@ -53,7 +53,7 @@ public class objetoInteractuable : MonoBehaviour
 
     void OnMouseDown()
     {
-        // Guardamos la posición inicial respetando el plano frontal Z = -2
+        // guarda la posición inicial respetando el plano frontal Z = -2
         initialPosition = new Vector3(transform.position.x, transform.position.y, -2f);
         transform.position = initialPosition;
         isDragging = true;
@@ -68,7 +68,7 @@ public class objetoInteractuable : MonoBehaviour
             if (currentCam != null)
             {
                 Vector3 mousePos = currentCam.ScreenToWorldPoint(Input.mousePosition);
-                // FORZAMOS Z = -2f para que el ítem vuele POR ENCIMA del escenario y UI al arrastrar
+                // fuerza Z = -2f para que el ítem vuele por encima del escenario y ui al arrastrar
                 mousePos.z = -2f;
                 transform.position = mousePos;
             }
@@ -89,12 +89,12 @@ public class objetoInteractuable : MonoBehaviour
         {
             if (hit.gameObject != gameObject)
             {
-                // 1. Detección del Inventario
+                // 1. detección del inventario
                 barraInventario inventory = hit.GetComponent<barraInventario>();
                 if (inventory != null)
                 {
                     Vector3 slotPos = inventory.GetNextFreeSlot(this);
-                    // Aseguramos que el slot conserve el plano frontal (-2)
+                    // asegura que el slot conserve el plano frontal (-2)
                     slotPos.z = -2f;
                     transform.position = slotPos;
 
@@ -108,7 +108,7 @@ public class objetoInteractuable : MonoBehaviour
                     return;
                 }
 
-                // 2. Detección de Combinación con otro objeto
+                // 2. deteccion de combinacion con otro objeto
                 objetoInteractuable targetItem = hit.GetComponent<objetoInteractuable>();
                 if (targetItem != null)
                 {
@@ -124,7 +124,7 @@ public class objetoInteractuable : MonoBehaviour
         }
 
         Debug.Log("No se encontró ningún otro objeto válido debajo.");
-        // Si no se soltó en un lugar válido, regresa a su casilla manteniendo la Z correcta
+        
         transform.position = initialPosition;
     }
 }

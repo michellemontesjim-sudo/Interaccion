@@ -13,18 +13,18 @@ public class SceneChanger : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Evita que el SceneManager se destruya
+            DontDestroyOnLoad(gameObject); // evita que scenemanager se destruya
         }
         else
         {
-            Destroy(gameObject); // Destruye duplicados
+            Destroy(gameObject); // destruye duplicados
         }
     }
-    // Cambia a la escena mediante su nombre exacto
+    // cambia a la escena
     public void CambiarAEscena(string nombreEscena)
     {
         Debug.Log("Intentando cargar la escena: " + nombreEscena);
         UnityEngine.SceneManagement.SceneManager.LoadScene(nombreEscena);
-        //SceneManager.LoadScene(nombreEscena);
+        
     }
 }
