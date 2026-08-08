@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|d:\\usuarios\\documents\\interacciontarea\\interaccion\\assets\\scripts\\persistentobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\persistentobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|d:\\usuarios\\documents\\interacciontarea\\interaccion\\assets\\scripts\\objetointeractuable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objetointeractuable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\assets\\scripts\\barrainventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\barrainventario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\assets\\scripts\\controladorescenafinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controladorescenafinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\assets\\scripts\\recetamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\recetamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|d:\\usuarios\\documents\\interacciontarea\\interaccion\\assets\\scripts\\limpiadorescenafinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\limpiadorescenafinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\assets\\scripts\\acertijotexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\acertijotexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\assets\\scripts\\botoncambiarescena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C6072CEE-2A7E-54AB-30DE-0D6A4DAFE66B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\botoncambiarescena.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "objetoInteractuable.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\objetoInteractuable.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\objetoInteractuable.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\objetoInteractuable.cs",
+              "RelativeToolTip": "Assets\\scripts\\objetoInteractuable.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAADwvycAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T22:43:30.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersistentObject.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\PersistentObject.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\PersistentObject.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\PersistentObject.cs",
+              "RelativeToolTip": "Assets\\scripts\\PersistentObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T22:39:43.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LimpiadorEscenaFinal.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\LimpiadorEscenaFinal.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\LimpiadorEscenaFinal.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\LimpiadorEscenaFinal.cs",
+              "RelativeToolTip": "Assets\\scripts\\LimpiadorEscenaFinal.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T01:57:40.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ControladorEscenaFinal.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\ControladorEscenaFinal.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\ControladorEscenaFinal.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\ControladorEscenaFinal.cs",
+              "RelativeToolTip": "Assets\\scripts\\ControladorEscenaFinal.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-07T01:28:13.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "barraInventario.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\barraInventario.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\barraInventario.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\barraInventario.cs",
+              "RelativeToolTip": "Assets\\scripts\\barraInventario.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwE8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T23:54:54.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecetaManager.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\RecetaManager.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\RecetaManager.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\RecetaManager.cs",
+              "RelativeToolTip": "Assets\\scripts\\RecetaManager.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAApwBEAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T23:40:37.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BotonCambiarEscena.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\BotonCambiarEscena.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\BotonCambiarEscena.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\BotonCambiarEscena.cs",
+              "RelativeToolTip": "Assets\\scripts\\BotonCambiarEscena.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwCgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T23:34:44.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AcertijoTexto.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\AcertijoTexto.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\AcertijoTexto.cs",
+              "ToolTip": "D:\\Usuarios\\Documents\\interaccionTarea\\Interaccion\\Assets\\scripts\\AcertijoTexto.cs",
+              "RelativeToolTip": "Assets\\scripts\\AcertijoTexto.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAD4v8UAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-06T21:18:50.297Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
